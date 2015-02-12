@@ -20,6 +20,18 @@ var port = process.env.PORT || 8080;
 // (uncomment after you enter in your own credentials in config/db.js)
 mongoose.connect(db.url); 
 
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open to ' + port);
+});
+
+mongoose.connection.on('error',function (err) {
+  console.log('Mongoose default connection error: ' + err);
+});
+
+mongoose.connection.on('disconnected', function () {
+  console.log('Mongoose default connection disconnected');
+});
+
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
 app.use(bodyParser.json()); 
@@ -50,6 +62,4 @@ app.listen(port);
 
 // shoutout to the user                     
 console.log('Magic happens on port ' + port);
-
-// expose app           
-exports = module.exports = app;                         
+                     

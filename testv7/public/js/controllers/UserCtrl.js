@@ -40,8 +40,7 @@ angular.module('UserCtrl', [])
                                                 $scope.requestObject.user.enabled});               
                 
             user.$save(function(){
-                $scope.userName = "";       
-                $scope.userAge = "";
+                
             });
         }
         

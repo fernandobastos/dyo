@@ -1,4 +1,5 @@
 var User = require('./models/User');
+var Car = require('./models/Car');
 
 module.exports = function(app, router) {
 
@@ -45,6 +46,24 @@ module.exports = function(app, router) {
                 res.json({ message: 'User deleted!'});
             });
         }); 
+        
+    router.route('/cars')    
+    
+        .get(function(req, res) {
+            Car.find(function(err, cars) {
+                if (err)
+                    res.send(err);
+                res.json(cars);
+            });
+        })
+    
+        .post(function(req, res) {
+            Car.create({plate: req.body.plate, _user: req.body._user}, function (err, cars) {
+                if (err) 
+                    res.send(err);
+                res.json(cars);
+          });
+        });
     
     router.use(function(req, res, next) {
         console.log('Something is happening.');

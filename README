@@ -1,0 +1,6 @@
+
+
+////////Para correrlo en c9
+Para correr la app primero escriba lo siguiente: ./mongod en la consola, despues abre el archivo server.js y le da run
+///////////Para correrlo en node jitsu
+Escribir jitsu deploy abrir la pagina en http://dyo.nodejitsu.com/

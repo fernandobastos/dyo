@@ -5,9 +5,17 @@
   "dependencies": {
     "angular-resource": "^1.3.13",
     "body-parser": "~1.4.2",
-    "express": "~4.5.1",
+    "express": "~4.8.0",
     "method-override": "~2.0.2",
     "mongoose": "~3.8.0",
     "nodemon": "^1.3.6"
+  },
+  "subdomain": "dyo",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "0.0.0-4",
+  "engines": {
+    "node": "0.10.x"
   }
 }
