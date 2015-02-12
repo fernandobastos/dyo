@@ -1,0 +1,11 @@
+<div class="jumbotron">
+    <h2>{{frmTopic}}</h2>
+    <div style="width: 30%;">
+        <button ng-click="loadUserFrm(null)">Create user</button>
+        <li ng-repeat="user in users | filter: search">
+            <a>{{user.name}}</a>
+            <button ng-click="loadUserFrm(user)">edit</button>
+            <button ng-click="remove(user._id, index)">remove</button>         
+        </li>
+    </div>
+</div>
